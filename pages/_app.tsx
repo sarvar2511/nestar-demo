@@ -19,7 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />;
     </ThemeProvider>
   );
-  /*Bu yerda biz MUI ni Component {...pageProps}
+  /* Bu yerda biz MUI ni Component {...pageProps}
   ga parent component sifatida wrap qilamiz 
   bu degani page routing tizimidagi barcha fayllarga
   tarqatmoqda degani */
