@@ -7,6 +7,7 @@ import { CssBaseline } from "@mui/material";
 import { light } from "../scss/MaterialTheme";
 import React, { useState } from "react";
 import "../scss/app.scss";
+import "../scss/pc/main.scss";
 
 export default function App({ Component, pageProps }: AppProps) {
   console.log(" APP COMPONENT -- -- PAGE Router");
