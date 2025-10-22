@@ -10,6 +10,7 @@ const withLayoutMain = (Component: any) => {
         </Head>
 
         <Stack id="pc-wrap">
+          {/** pc version da qilishga eslatman **/}
           <Stack sx={{ background: "#81c784" }}>Header Home</Stack>
 
           <Stack id="main">
