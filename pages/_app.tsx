@@ -1,28 +1,25 @@
-/* _app.tsx fayl orqali barcha global integrationlarni amalga oshiramiz  */
-/* MUI ni integratsiyasi shu yerda amalga oshadi */
-
 import type { AppProps } from "next/app";
-import { ThemeProvider, createTheme } from "@mui/material";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
-import { light } from "../scss/MaterialTheme";
-import React, { useState } from "react";
+import { light } from "@/scss/MaterialTheme";
+import { useState } from "react";
+import { ApolloProvider } from "@apollo/client";
+import client from "@/apollo/client";
 import "../scss/app.scss";
 import "../scss/pc/main.scss";
+import "../scss/mobile/main.scss";
 
 export default function App({ Component, pageProps }: AppProps) {
-  console.log(" APP COMPONENT -- -- PAGE Router");
-  //@ts-ignore
-  const [theme, setTheme] = useState(createTheme(light));
+  // @ts-ignore
+  const [ theme, setTheme ] = useState(createTheme(light));
 
-  //socket.io, Redux, MUI ....
+  // SocketIO, Redux, MUI, Apollo Client ...
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Component {...pageProps} />;
-    </ThemeProvider>
+    <ApolloProvider client={client}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </ApolloProvider>
   );
-  /* Bu yerda biz MUI ni Component {...pageProps}
-  ga parent component sifatida wrap qilamiz 
-  bu degani page routing tizimidagi barcha fayllarga
-  tarqatmoqda degani */
 }
