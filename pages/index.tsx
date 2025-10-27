@@ -14,6 +14,7 @@ const Home: NextPage = () => {
   // DEVICE: MOBILE vs PC
   const device = useDeviceDetect();
 
+  //Backend dan malumot olish
   const {
     loading: getPropertiesLoading,
     data: getPropertiesData,
@@ -27,15 +28,14 @@ const Home: NextPage = () => {
         limit: 5,
         sort: "createdAt",
         direction: "DESC",
-        search: {}
+        search: {},
       },
     },
   });
   console.log("getPropertiesData =>", getPropertiesData);
-  
 
   if (device === "mobile") {
-    return <Stack>HOMEPAGE MOBILE</Stack>
+    return <Stack>HOMEPAGE MOBILE</Stack>;
   } else {
     return (
       <Stack className="home-page">

@@ -11,7 +11,7 @@ import "../scss/mobile/main.scss";
 
 export default function App({ Component, pageProps }: AppProps) {
   // @ts-ignore
-  const [ theme, setTheme ] = useState(createTheme(light));
+  const [theme, setTheme] = useState(createTheme(light));
 
   // SocketIO, Redux, MUI, Apollo Client ...
   return (
